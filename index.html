@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=0"/>
+    <meta charset="UTF-8">
+    <title>ics课程表生成器</title>
+    <script src="js/jquery.js"></script>
+
+    <script src="js/malert.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/malert.css" />
+
+    <!--//符号字体-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/5.8.1/css/all.css">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!--//日期组件-->
+    <script src="js/laydate/laydate.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>课程表ICS生成器 <small>ver.03b</small></h1>
+
+    <div style="margin: 20px;">
+        <h3>1、录入课程</h3>
+    </div>
+    <table id="tab_classes">
+        <thead>
+        <tr>
+            <th><i class="fas fa-plus-circle btn_addrow" ></i></th>
+            <th>一</th>
+            <th>二</th>
+            <th>三</th>
+            <th>四</th>
+            <th>五</th>
+            <th class="cblue">六</th>
+            <th class="cblue">日</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <i class="far fa-clock"></i>
+                <input type="text" name="c_time[]" class="ctime" id="ctime_1" placeholder="上课时间"><br/>
+                <i class="fas fa-minus-circle cred btn_delrow"></i>
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <i class="far fa-clock"></i>
+                <input type="text" name="c_time[]" class="ctime" id="ctime_2" placeholder="上课时间"><br/>
+                <i class="fas fa-minus-circle cred btn_delrow"></i>
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <i class="far fa-clock"></i>
+                <input type="text" name="c_time[]" class="ctime" id="ctime_3" placeholder="上课时间"><br/>
+                <i class="fas fa-minus-circle cred btn_delrow"></i>
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+            <td>
+                <input type="text" name="c_name[]" placeholder="课程名">
+                <input type="text" name="c_room[]" placeholder="课室">
+            </td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="clr" style="margin: 20px;">
+        <h3>2、是否需要上课提醒</h3>
+        <label><input type="radio" name="alarm" value="" checked="checked">不提醒</label>
+        <label><input type="radio" name="alarm" value="-PT10M">10分钟前</label>
+        <label><input type="radio" name="alarm" value="-PT20M">20分钟前</label>
+        <label><input type="radio" name="alarm" value="-PT1H">1小时前</label>
+        <!--
+        //触发时间值 ["-PT10M","-PT30M","-PT1H","-PT2H","-P1D"]
+        <label><input type="radio" name="alarm" value="">不提醒</label>
+        -->
+    </div>
+    <div style="margin: 20px;">
+        <h3>3、设置课程提醒结束日期</h3>
+    </div>
+    <div class="clr" style="position: relative; margin: 20px; width: 200px;" >
+        <i class="far fa-calendar-alt" style="position: absolute;top: 16px; left: 9px;transform: translate(0,-50%);color: #AAA;"></i>
+        <input type="text" id="enddate" placeholder="选择期末日期" style="text-indent: 20px;">
+        <p>
+            <button onclick="chkform();" id="btn_dl">保存导出为 .ICS 文件</button>
+        </p>
+
+    </div>
+    <div class="clr hid" style="position: relative; margin: 20px;" >
+        <h3>下载保存或复制链接以下链接到iOS手机浏览器打开</h3>
+        <input type="text" id="icslink" readonly="readonly">
+    </div>
+
+
+    <ul class="hint" style="padding: 12px 50px;">
+        <li>没有的课程的时间留空</li>
+        <li>课室可以不填留空</li>
+        <li>午休课间操等不需要提醒的事项不需要录入</li>
+        <li>微信不支持直接打开，建议发送邮件附件发送给自己</li>
+        <li>安卓不支持ics文件(小米手机验证)</li>
+        <li>Win10 outlook支持直接导入到日历</li>
+        <li>提醒时间从本周周一开始，到结束日期为止</li>
+        <li>不设置结束日期，默认值为6个月</li>
+    </ul>
+
+
+</div>
+<footer>课程表生成器 | 若鱼 <a href="https://ruoyu.tech" target="_blank">ruoyu.tech</a> &copy; </footer>
+<table id="row_template" class="hid">
+    <tbody>
+    <tr>
+        <td>
+            <i class="far fa-clock"></i>
+            <input type="text" name="c_time[]" class="ctime" id="" placeholder="上课时间"><br/>
+            <i class="fas fa-minus-circle cred btn_delrow"></i>
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+        <td>
+            <input type="text" name="c_name[]" placeholder="课程名">
+            <input type="text" name="c_room[]" placeholder="课室">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
+<script src="js/funs.js"></script>

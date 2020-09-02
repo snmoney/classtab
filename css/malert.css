@@ -1,0 +1,89 @@
+.ma_mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index:1000;
+    display: none;
+}
+
+.ma_dialog {
+    position: absolute;
+    z-index: 1001;
+    width: 80%;
+    max-width: 300px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    display: none;
+}
+
+.ma_msg {
+    padding: 2.7em 20px 1.7em;
+    color: #353535;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.ma_ft {
+    position: relative;
+    line-height: 48px;
+    font-size: 18px;    
+    border-top: 1px solid #d5d5d6;
+    cursor: pointer;
+}
+.ma_ft:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 0;        
+    transform-origin: 0 0;    
+    transform: scaleY(.5);
+}
+#ma_btn_negative {
+    float: left;
+    width: 50%;
+    border-right: 1px solid #d5d5d6;
+}
+#ma_btn_positive {
+    color: #0bb20c;
+}
+
+/*mHint相关样式*/
+
+.mh_body {
+    background: #F74819;
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    min-width: 300px;
+    max-width: 80%;
+    text-align: center;
+    padding: 8px 22px;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.4);
+
+    position: fixed;
+    z-index: 999;
+    opacity: 0.8;
+    left: 50%;
+    top: -50px;
+
+    transform: translate(-50%,0);
+
+    /*
+    display: none;
+    */
+
+}
